@@ -9,42 +9,70 @@ export const InputForm = styled.form`
 `;
 
 export const InputForContact = styled.input`
-  margin-top: 5px;
   width: 300px;
-  padding: 5px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #fff;
-  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  padding: 13px 20px;
+  padding-left: 55px;
+  font-weight: 500;
+  border-radius: 4px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
   outline: none;
+  color: #c4c3ca;
+  background-color: #1f2029;
+  border: none;
+  transition: all 200ms linear;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
 `;
 
 export const LabelInputContact = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  color: #c4c3ca;
 `;
 export const BtnSubmit = styled.button`
-  width: fit-content;
-  padding: 6px 14px;
-  border-radius: 6px;
+  border-radius: 4px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   border: none;
   cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  background: linear-gradient(180deg, #7066e0 0%, #6054e0 100%);
-  background-origin: border-box;
-  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
-  user-select: none;
-  touch-action: manipulation;
+  background-color: #ffeba7;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+
   &:focus,
   &:hover {
-    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
-      0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-      0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-    outline: 0;
+    background-color: #102770;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
   }
+`;
+
+export const IconUser = styled.i`
+  position: relative;
+  top: 0;
+  left: 10%;
+  font-size: 18px;
+  color: #ffeba7;
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+`;
+
+export const TitleLable = styled.span`
+  margin-left: 20px;
 `;

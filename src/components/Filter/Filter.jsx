@@ -1,7 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { FiSearch } from 'react-icons/fi';
 import { filterContacts } from 'redux/filterSlice';
 import { selectContacts, selectFilter } from 'redux/selectors';
-import { FilterInput, FilterLabel } from './Filter.styled';
+import {
+  FilterInput,
+  FilterLabel,
+  InputContainer,
+  IconUser,
+  TitleLable,
+} from './Filter.styled';
 
 export const Filter = () => {
   const filter = useSelector(selectFilter);
@@ -15,12 +22,17 @@ export const Filter = () => {
   return (
     contacts.length > 0 && (
       <FilterLabel>
-        Find contacts by name
-        <FilterInput
-          type="text"
-          value={filter}
-          onChange={getFilteredContacts}
-        />
+        <TitleLable>Find contacts by name</TitleLable>
+        <InputContainer>
+          <IconUser>
+            <FiSearch />
+          </IconUser>
+          <FilterInput
+            type="text"
+            value={filter}
+            onChange={getFilteredContacts}
+          />
+        </InputContainer>
       </FilterLabel>
     )
   );

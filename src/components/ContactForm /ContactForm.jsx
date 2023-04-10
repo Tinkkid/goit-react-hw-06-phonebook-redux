@@ -3,11 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'redux/contactsSlice';
 import { selectContacts } from 'redux/selectors';
 import Swal from 'sweetalert2';
+import { FiUser, FiPhone } from 'react-icons/fi';
 import {
   InputForm,
   InputForContact,
   LabelInputContact,
   BtnSubmit,
+  IconUser,
+  InputContainer,
+  TitleLable,
 } from './ContactForm.styled';
 
 export const ContactForm = () => {
@@ -45,11 +49,15 @@ export const ContactForm = () => {
 
     if (dublicateOfName) {
       Swal.fire(`${name} is alredy in contacts`);
+      setName('');
+      setNumber('');
       return false;
     }
 
     if (dublicateOfNumber) {
       Swal.fire(`${number} is alredy in contacts`);
+      setName('');
+      setNumber('');
       return false;
     }
     dispatch(addContacts(name, number));
@@ -60,30 +68,40 @@ export const ContactForm = () => {
   return (
     <InputForm onSubmit={handleSubmit}>
       <LabelInputContact>
-        Name
-        <InputForContact
-          value={name}
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-          onChange={handleChange}
-          placeholder="Jack Daniels"
-        />
+        <TitleLable>Name</TitleLable>
+        <InputContainer>
+          <IconUser>
+            <FiUser />
+          </IconUser>
+          <InputForContact
+            value={name}
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+            onChange={handleChange}
+            placeholder="Jack Daniels"
+          />
+        </InputContainer>
       </LabelInputContact>
       <LabelInputContact>
-        Number
-        <InputForContact
-          value={number}
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-          onChange={handleChange}
-          placeholder="777 77 77"
-        />
+        <TitleLable>Number</TitleLable>
+        <InputContainer>
+          <IconUser>
+            <FiPhone />
+          </IconUser>
+          <InputForContact
+            value={number}
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+            onChange={handleChange}
+            placeholder="777 77 77"
+          />
+        </InputContainer>
       </LabelInputContact>
       <BtnSubmit type="submit">Add contact</BtnSubmit>
     </InputForm>

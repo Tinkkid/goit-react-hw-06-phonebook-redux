@@ -2,31 +2,36 @@ import styled from '@emotion/styled';
 
 export const Name = styled.span`
   margin-right: 5px;
+  color: #c4c3ca;
 `;
 export const Number = styled.span`
   margin-right: 10px;
+  color: #c4c3ca;
 `;
 
 export const BtnDelete = styled.button`
-  width: fit-content;
-  padding: 4px 8px;
-  border-radius: 6px;
+  border-radius: 4px;
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 15px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   border: none;
   cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-  font-size: 12px;
-  background: linear-gradient(180deg, #7066e0 0%, #6054e0 100%);
-  background-origin: border-box;
-  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
-  user-select: none;
-  touch-action: manipulation;
+  background-color: #ffeba7;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+
   &:focus,
   &:hover {
-    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
-      0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-      0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-    outline: 0;
+    background-color: #102770;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
   }
 `;
